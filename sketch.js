@@ -242,30 +242,9 @@ function thetruth(){
 
 function zoomCamera(freedom) {
 	if(freedom){
-zoom += zvel;
-	zvel *= .99;
-	xpos += xvel;
-	xvel *= .99;
-	if (zoom < -200000000) {
-		zvel *= -1;
-	}
-	if (xpos > 1200000000 || xpos < -120000000) {
-		xvel *= -1
-	};
-	if (keyIsDown(UP_ARROW)) {
-		zvel -= 0.2;
-	}
-	if (keyIsDown(DOWN_ARROW)) {
-		zvel += 0.2;
-	}
-	if (keyIsDown(LEFT_ARROW)) {
-		xvel -= 0.2;
-	}
-	if (keyIsDown(RIGHT_ARROW)) {
-		xvel += 0.2;
-	}
-	
-	
+  
+  orbitControl();
+  rotateY(0.5)
 	camera(xpos, 0, zoom, 0, 0, 0, 0, 1, 0);
 	
 }
