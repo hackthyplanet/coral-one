@@ -74,7 +74,7 @@ let song
 function setup () {
 	pixelDensity (displayDensity ());
 	angleMode(DEGREES)
-	createCanvas (windowWidth -10, windowHeight -10, WEBGL);
+	createCanvas (windowWidth -1, windowHeight -1, WEBGL);
 	colorMode (RGB, 200);
 	background (0)
 
