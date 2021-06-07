@@ -1,4 +1,4 @@
-
+////////////////CODE ONE///////////////////////////////////////////////////////////
 
 var bubbles = [];
 var targetx;
@@ -74,7 +74,7 @@ let song
 function setup () {
 	pixelDensity (displayDensity ());
 	angleMode(DEGREES)
-	createCanvas (windowWidth -1, windowHeight -1, WEBGL);
+	createCanvas (windowWidth -10, windowHeight -10, WEBGL);
 	colorMode (RGB, 200);
 	background (0)
 
@@ -95,11 +95,11 @@ function setup () {
 
    
 
-	camman = createCamera()
+	//camman = createCamera()
 
-	if(beginning = true){
-	camman.setPosition(0, 0, 8000)
-	}
+	//if(beginning = true){
+	//camman.setPosition(0, 0, 8000)
+	//}
 
 
 	startColor = color(0);
@@ -113,7 +113,7 @@ function setup () {
     LnewColor = color(170, 242, 160)
 	Lamt = 0;
 	ambientLight (LstartColor);
-	pointLight (LstartColor, 200000.0, 200000.0, 800.0);
+	//pointLight (LstartColor, 200000.0, 200000.0, 800.0);
 
 
 }
@@ -134,16 +134,15 @@ function preload(){
 function draw () {
 	m = millis()
 
-	//background(7, 217, 217, 255)
+	background(7, 217, 217 + (mouseX/2), 0 + (mouseY/2))
 
-	   background(lerpColor(startColor, newColor, smoothstep(0.3,0.9,amt)));
- 		amt += 0.001;
-  		if(amt >= 1){
-   		amt = 0.0
-    	startColor = newColor;
-		newColor = color(7, 217, 217, 255)
-		
-	}
+	  // background(lerpColor(startColor, newColor, smoothstep(0.3,0.9,amt)));
+ 	//	amt += 0.001;
+  	//	if(amt >= 1){
+   	//	amt = 0.0
+    //	startColor = newColor;
+	//	newColor = color(7, 217, 217, 255)	
+	//}
 		
 	//ambientLight (242, 124, 203);
 
@@ -175,16 +174,19 @@ function draw () {
 		c.move()
 	}
 	
-	cameraz(beginning)
+	//cameraz(beginning)
 
 	print(millis())
 	
-	zoommoves(zoommoving)
+	//zoommoves(zoommoving)
 
-	nozoommoves(zoomnotmoving)
+	//nozoommoves(zoomnotmoving)
 
 	
-    zoomCamera(freedom)
+    //zoomCamera(freedom)
+
+	orbitControl();
+	rotateY(0.5)
     
 	print(beginning)
 	print(freedom)
@@ -300,7 +302,7 @@ function lighting(){
 	 if(Lamt >= 2){
 	  Lamt = 0.0
    LstartColor = LnewColor;
-   LnewColor = color(170, 242, 160)
+   LnewColor = color(170, 242, 160, 100)
 
 	 }
 }
