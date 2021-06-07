@@ -76,7 +76,7 @@ function setup () {
 	angleMode(DEGREES)
 	createCanvas (windowWidth -10, windowHeight -10, WEBGL);
 	colorMode (RGB, 200);
-	background (0)
+	//background (0)
 
 
 	noCursor();
