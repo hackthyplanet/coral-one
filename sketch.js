@@ -80,7 +80,7 @@ function setup () {
 
 
 	noCursor();
-	song.play()
+	song.loop()
 
 	
 	for (let y = -height / 2 + masterSize; y < height / 2; y += 4 * masterSize) {
@@ -91,16 +91,6 @@ function setup () {
 	
 	zoom = 1.2 * height;
 	lpos = createVector(0, 0);
-	//mpos = createVector(mouseX, mouseY);
-
-   
-
-	//camman = createCamera()
-
-	//if(beginning = true){
-	//camman.setPosition(0, 0, 8000)
-	//}
-
 
 	startColor = color(0);
     newColor = color(105, 191, 142);
@@ -113,8 +103,6 @@ function setup () {
     LnewColor = color(170, 242, 160)
 	Lamt = 0;
 	ambientLight (LstartColor);
-	//pointLight (LstartColor, 200000.0, 200000.0, 800.0);
-
 
 }
 
@@ -134,7 +122,7 @@ function preload(){
 function draw () {
 	m = millis()
 
-	background(7, 217, 217 + (mouseX/2), 0 + (mouseY/2))
+	background(7, 217, 217 + (mouseX/2), 0 + (mouseY/3))
 
 	  // background(lerpColor(startColor, newColor, smoothstep(0.3,0.9,amt)));
  	//	amt += 0.001;
@@ -174,27 +162,16 @@ function draw () {
 		c.move()
 	}
 	
-	//cameraz(beginning)
-
 	print(millis())
 	
-	//zoommoves(zoommoving)
-
-	//nozoommoves(zoomnotmoving)
-
-	
-    //zoomCamera(freedom)
-
 	orbitControl();
 	rotateY(0.5)
     
 	print(beginning)
 	print(freedom)
-	
-	
+		
 	CoralOneLeaving()
-	
-    //print(zoomnumber)
+
 	
 }
 
@@ -302,7 +279,7 @@ function lighting(){
 	 if(Lamt >= 2){
 	  Lamt = 0.0
    LstartColor = LnewColor;
-   LnewColor = color(170, 242, 160, 100)
+   LnewColor = color(170, 242, 160, 50)
 
 	 }
 }
@@ -504,11 +481,11 @@ class Coral{
 		model(fishtrio)
 
 		translate(-.7 / this.size*6, 5/this.size)
-		scale(3)
+		scale(5)
 		model(fishtrio)
 
 		specularMaterial(10);
-		translate(1.08 * this.size*20, 0.04 * this.size)
+		translate(1.08 * this.size*20, 0.4 * this.size)
 		scale(1)
 		fill(105, 191, 142)
 		model(fishtrio);
@@ -521,7 +498,7 @@ class Coral{
 		translate(0, -3.24 * this.size, 0);
 		push();
 		rotateX(90);
-		translate(.9 * this.size, 0.02 * this.size)
+		translate(.9 * this.size, 0.2 * this.size)
 		scale(2)
 		model(fishtrio);
 		specularMaterial(4);
