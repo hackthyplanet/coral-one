@@ -122,7 +122,7 @@ function preload(){
 function draw () {
 	m = millis()
 
-	background(7, 217, 217 + (mouseX/2), 0 + (mouseY/3))
+	background(7, 217, 150 + (mouseX/2), 0 + (mouseY/3))
 
 	  // background(lerpColor(startColor, newColor, smoothstep(0.3,0.9,amt)));
  	//	amt += 0.001;
@@ -378,9 +378,9 @@ function CoralOne(){
 
   rotateY(millis() / 20)
   normalMaterial()
-  shininess(10)
+  shininess(1 + sin(frameCount/2*)3)
   scale(50)
-  fill( 105, 191, 142)
+  fill( 194, 111, 242)
   model(coraluno)
  
 }
